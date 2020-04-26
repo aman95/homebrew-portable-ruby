@@ -16,20 +16,20 @@ class PortableRubyAT25 < PortableFormula
 
   depends_on "makedepend" => :build
   depends_on "pkg-config" => :build
-  depends_on "aman95/portable-readline" => :build
-  depends_on "aman95/portable-libyaml" => :build
-  depends_on "aman95/portable-openssl" => :build
+  depends_on "aman95/portable-ruby/portable-readline" => :build
+  depends_on "aman95/portable-ruby/portable-libyaml" => :build
+  depends_on "aman95/portable-ruby/portable-openssl" => :build
   if OS.linux?
-    depends_on "aman95/portable-ncurses" => :build
-    depends_on "aman95/portable-zlib" => :build
+    depends_on "aman95/portable-ruby/portable-ncurses" => :build
+    depends_on "aman95/portable-ruby/portable-zlib" => :build
   end
 
   def install
-    readline = Formula["aman95/portable-readline"]
-    libyaml = Formula["aman95/portable-libyaml"]
-    openssl = Formula["aman95/portable-openssl"]
-    ncurses = Formula["aman95/portable-ncurses"]
-    zlib = Formula["aman95/portable-zlib"]
+    readline = Formula["aman95/portable-ruby/portable-readline"]
+    libyaml = Formula["aman95/portable-ruby/portable-libyaml"]
+    openssl = Formula["aman95/portable-ruby/portable-openssl"]
+    ncurses = Formula["aman95/portable-ruby/portable-ncurses"]
+    zlib = Formula["aman95/portable-ruby/portable-zlib"]
 
     args = %W[
       --prefix=#{prefix}
