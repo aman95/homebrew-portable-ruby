@@ -104,7 +104,6 @@ class PortableRubyAT25 < PortableFormula
     assert_match "200",
       shell_output("#{ruby} -ropen-uri -e 'open(\"https://google.com\") { |f| puts f.status.first }'").strip
     system testpath/"bin/gem", "environment"
-    system testpath/"bin/bundle", "init"
     # install gem with native components
     system testpath/"bin/gem", "install", "byebug"
     assert_match "byebug",
